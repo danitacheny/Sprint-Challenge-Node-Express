@@ -8,7 +8,7 @@ router.get('/compare', (req, res) => {
 		.then(values => {
 			const currentValue = values[0].bpi.USD.rate_float;
 			const ydayValue = Object.values(values[1].bpi)[0];
-			res.send(String( currentValue - ydayValue ));
+			res.send({ difference: currentValue - ydayValue });
 		})
 })
 
